@@ -90,7 +90,7 @@ app.post("/register", (req, res) => {
 
     // log the userr in by giving them a cookie
     const ourTokenValue = jwt.sign({exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24, skyColor: "blue", userid: ourUser.id, username: ourUser.username, }, process.env.JWTSECRET)
-
+ 
     res.cookie("ourSimpleApp", ourTokenValue, {
         httpOnly: true,
         secure: true,
