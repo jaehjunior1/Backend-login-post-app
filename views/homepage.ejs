@@ -15,17 +15,21 @@
     </header>
 
     <main>
-        <form action="/register" method="POST"></form>
-        <fieldset>
-            <legend>Create an account</legend>
-                <label for="username"><small>Username</small></label>
-                <input type="text" id="username" name="username" autocomplete="off">
+        <form action="/register" method="POST">
+            <% errors.forEach(error => {%>
+                <p class="notice"><%= error %></p>
+           <%}) %>
+            <fieldset>
+                <legend>Create an account</legend>
+                    <label for="username"><small>Username</small></label>
+                    <input type="text" id="username" name="username" autocomplete="off">
 
-                <label for="password"><small>Password</small></label>
-                <input type="text" id="password" name="password" autocomplete="off">
-                <br>
-                <button>SignUp</button>
-        </fieldset>
+                    <label for="password"><small>Password</small></label>
+                    <input type="text" id="password" name="password" autocomplete="off">
+                    <br>
+                    <button>SignUp</button>
+            </fieldset>
+        </form>
     </main>
 
     <footer>
